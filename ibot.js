@@ -30,6 +30,7 @@ bot.on('message', (msg) =>
 bot.on('ready', () =>
 {
   console.log(`Logged in as ${bot.user.tag}!`);
+  bot.user.setActivity(`${prefix}help`, 'PLAYING');
 });
 
 /*************************************************************************************/
