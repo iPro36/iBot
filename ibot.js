@@ -2,7 +2,6 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const ms = require("ms");
 const moment = require("moment");
-var token = 'NTEyNzc1MDM1MDM2MTA2Nzgy.DtjMog.KBdfuxAh2JOQ7p-BNLcvkiLIlBQ';
 var prefix = '.'; //set the command here
 const Keyv = require('keyv');
 const keyv = new Keyv(); // for in-memory storage
