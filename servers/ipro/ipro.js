@@ -7,7 +7,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
       {
         msg.channel.send(
           `-\n`+
-          `• **${msg.guild.name}'s Commands: **\n`+
+          `• **${msg.guild.name} Server Commands: **\n`+
           `> \`${prefix}ihelp:\` Gives you iPro's Server Commands`);
       },10);
     }
@@ -22,7 +22,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
       `> \`${prefix}rolehex [hex code]:\` Lets you make a role with your name and pick a color using hex\n\n`+
 
       `• **Other Commands: **\n`+
-      `> \`${prefix}help:\` This list`);
+      `> \`${prefix}ihelp:\` This list`);
 
     },10);
   
