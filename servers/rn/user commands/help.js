@@ -8,7 +8,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
     {
       msg.channel.send(
         `-\n`+
-        `• **${msg.guild.name}'s Commands: **\n`+
+        `• **${msg.guild.name} Server Commands: **\n`+
         `> \`${prefix}rnhelp:\` Gives you RN's Server Commands`);
     },10);
   }
@@ -36,7 +36,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
       `> \`${prefix}count\` To see the ammount of Civil Warriors\n\n`+*/
 
       `• **Other Commands: **\n`+
-      `> \`${prefix}help:\` This list`);
+      `> \`${prefix}rnhelp:\` This list`);
   }
 
 }
