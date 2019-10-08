@@ -56,7 +56,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel, fs) =>
     .setTitle(`${member.displayName} Warned`)
     .setDescription(`Reason: ${reason}`)
     .setColor('f41823')
-    .setThumbnail('https://media1.giphy.com/media/B0uJ6d5OXb50k/giphy.gif')
+    .setThumbnail('https://media.tenor.com/images/bc59edc1b7897700e567e3a92e36365c/tenor.gif')
     .setFooter(`Staff: ${msg.author.username}`, msg.author.avatarURL)
     .setTimestamp();
     msg.channel.send(nembed);
