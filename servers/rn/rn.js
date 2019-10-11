@@ -23,4 +23,9 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
     let cw = require(`./user commands/civilwar/cw`);
     cw.run(bot, msg, args, command, Discord, ms, moment);*/
 
+    /***************************Other********************************/
+    //Assigning Roles
+    let roleassign = require(`./user commands/assignrole/files.js`);
+    roleassign.run(bot, msg, args, command, Discord, ms, moment, prefix);
+
 }
