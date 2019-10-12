@@ -26,8 +26,6 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
 
     msg.channel.send(
       `• **Info Commands: **\n`+
-      `> \`${prefix}rules:\` Gives you RN's Server Rules\n`+
-      `> \`${prefix}rnrules:\` Gives you RN's Clan Rules\n`+
       `> \`${prefix}web:\` Gives you the RN's website\n\n`+
 
       /*`• **Civil War Commands: **\n`+
