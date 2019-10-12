@@ -10,17 +10,23 @@ if(!msg)
   //Gives the list of admin commands
   if (command == 'adminhelp')
   {
-    return msg.channel.send(
-      `• **Make Commands: **\n`+
+      const modhelp = new Discord.RichEmbed()
+      .setColor('#9e5ef7')
+      .setAuthor('iCommands', bot.user.avatarURL)
+      .addField(`• **Make Commands: **`,
       `> \`${prefix}makemute:\` To make a mute role\n`+
       `> \`${prefix}makeilog:\` Creates a channel where, all commands used by mods are logged\n`+
-      `> \`${prefix}makeautolog:\` Creates a channel which logs every action on discord\n\n`+
+      `> \`${prefix}makeautolog:\` Creates a channel which logs every action on discord\n\n`, true)
 
-      `• **Other Commands: **\n`+
-      `> \`${prefix}dm [message]:\` Dm everyone on the server, with the given message\n\n`+
-
-      `• **Help Command(s): **\n`+
-      `> \`${prefix}adminhelp:\` This list`);
+      .addField(`• **Other Commands: **`,
+      `> \`${prefix}dm [message]:\` Dm everyone on the server, with the given message\n\n`, true)
+  
+      .addField(`• **Help Commands: **`,
+      `> \`${prefix}adminhelp:\` This list`, true)
+  
+      .setTimestamp()
+      .setFooter(`Staff: ${msg.author.username}`, msg.author.avatarURL);
+      return msg.channel.send(modhelp);
   }
 
   //Make

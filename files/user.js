@@ -3,20 +3,26 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
   //Help Command
   if (command == 'help')
   {
-    return msg.channel.send(
-      `• **Info Commands: ℹ️**\n`+
-      `> \`${prefix}info [user]:\` Shows you mentioned user's information or your info\n`+
-      `> \`${prefix}serverinfo:\` Shows this server\'s info\n`+
-      `> \`${prefix}roles:\` Shows a list of roles in this server\n\n`+
+    const help = new Discord.RichEmbed()
+    .setColor('#0099ff')
+    .setAuthor('iCommands', bot.user.avatarURL)
+    .addField(`• **Info Commands: ℹ️**`,
+    `> \`${prefix}info [user]:\` Shows you mentioned user's information or your info\n`+
+    `> \`${prefix}serverinfo:\` Shows this server\'s info\n`+
+    `> \`${prefix}roles:\` Shows a list of roles in this server\n\n`, true)
 
-      `• **Game Commands: 🎮**\n`+
-      `> \`${prefix}rps [rock/paper/scissor]:\` Play rock paper scissor with bot\n`+
-      `> \`${prefix}flip [heads/tails]:\` To flip a coin\n\n`+
+    .addField(`• **Game Commands: 🎮**`,
+    `> \`${prefix}rps [rock/paper/scissor]:\` Play rock paper scissor with bot\n`+
+    `> \`${prefix}flip [heads/tails]:\` To flip a coin\n\n`, true)
 
-      `• **Help Commands: 💁**\n`+
-      `> \`${prefix}modhelp:\` Shows a list of mod commands\n`+
-      `> \`${prefix}adminhelp:\` Shows a list of admin commands\n`+
-      `> \`${prefix}help:\` This list`);
+    .addField(`• **Help Commands: 💁**`,
+    `> \`${prefix}modhelp:\` Shows a list of mod commands\n`+
+    `> \`${prefix}adminhelp:\` Shows a list of admin commands\n`+
+    `> \`${prefix}help:\` This list`, true)
+
+    .setTimestamp()
+    .setFooter(`Requested By: ${msg.author.username}`, msg.author.avatarURL);
+    return msg.channel.send(help);
   }
     
   /*********************Games***************************/
