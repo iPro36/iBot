@@ -12,7 +12,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment) =>
     }
 
     let embed = new Discord.RichEmbed()
-    .setTitle("👉Click Here👈")
+    .setTitle("👉 Click Here 👈")
     .setURL("http://bit.ly/Team_RN")
     .setFooter(msg.author.username,msg.author.avatarURL)
     .setColor("#A80000")

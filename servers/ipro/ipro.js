@@ -31,12 +31,12 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
   //Assigns a role
   bot.on('guildMemberAdd', member =>
   {
-    if (!member.guild.roles.find("name", 'Guest'))
+    if (!member.guild.roles.find("id", '630457915400257557'))
     {
       msg.guild.createRole({name:"Guest", mentionable: false});
     }
 
-    let role = member.guild.roles.find("name", 'Guest');
+    let role = member.guild.roles.find("id", '630457915400257557');
     member.addRole(role);
   });
 

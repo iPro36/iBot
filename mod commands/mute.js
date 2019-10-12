@@ -14,10 +14,10 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel) =>
     if(!muterole)
     {
       //mute
-      let mute = require(`../admin commands/makemute.js`);
+      let mute = require(`../admin commands/makeCommands/makemute.js/index.js`);
       mute.run(bot, msg, args, command, Discord, ms, moment);
 
-      return msg.channel.send('It seems like there was no mute role in this server, no worries I took care of all that. Please tray once again...');
+      return msg.channel.send('It seems like there was no mute role in this server, no worries I took care of that. Please tray once again...');
     }
 
     //Checks to see if a memeber was given

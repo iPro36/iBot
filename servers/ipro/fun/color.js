@@ -1,7 +1,8 @@
 exports.run = (bot, msg, args, command, Discord, ms, moment) =>
 {
-    const toHex = require('colornames');
+  const toHex = require('colornames');
 
+    
     //Gives people role with the color of choice
   if (command == 'role')
   {
@@ -26,6 +27,8 @@ exports.run = (bot, msg, args, command, Discord, ms, moment) =>
       let role = msg.guild.roles.find("name", msg.author.username);
 
       msg.member.addRole(role.id);
+      color(msg);
+
 
       msg.channel.send(`You have been given  \`${msg.author.username}\` role with \`${color}\` color`);
     }, ms('1s'));
@@ -58,6 +61,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment) =>
       let role = msg.guild.roles.find("name", msg.author.username);
 
       msg.member.addRole(role.id);
+      color(msg);
 
       msg.channel.send(`You have been given  \`${msg.author.username}\` role with \`${color}\` hex code`);
     }, ms('1s'));
