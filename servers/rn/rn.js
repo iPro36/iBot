@@ -6,14 +6,6 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
     help.run(bot, msg, args, command, Discord, ms, moment, prefix);
 
     /***************************Clan Info********************************/
-    //Rn Rules
-    let rnrules = require(`./user commands/claninfo/rnrules`);
-    rnrules.run(bot, msg, args, command, Discord, ms, moment);
-
-    //Server Rules
-    let serverrules = require(`./user commands/claninfo/servrule`);
-    serverrules.run(bot, msg, args, command, Discord, ms, moment);
-
     //Website
     let web = require(`./user commands/claninfo/web`);
     web.run(bot, msg, args, command, Discord, ms, moment);
