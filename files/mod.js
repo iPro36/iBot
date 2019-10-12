@@ -9,7 +9,8 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
       id: msg.guild.id,
       deny: ['READ_MESSAGES'],
     }])
-    return msg.channel.send("I seems like there was no where for me to log, so I made a new log channel.");
+    return msg.channel.send("It seems like there was no where for me to log, so I made a new log channel.\n"+
+    "`Its only availabel to admins. Make sure you change perms according to your needs.`");
   }
 
   let logChannel = msg.guild.channels.find('name','ilog');

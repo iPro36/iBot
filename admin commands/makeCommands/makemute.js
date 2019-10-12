@@ -1,4 +1,4 @@
-module.exports.run = async (bot, msg, args, command, Discord, ms, moment) => 
+module.exports.run = async (bot, msg, args, command, Discord, ms, moment, prefix) => 
 {
   if (command == 'makemute')
   {
