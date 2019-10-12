@@ -6,7 +6,6 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
       setTimeout(function()
       {
         msg.channel.send(
-          `-\n`+
           `• **${msg.guild.name} Server Commands: **\n`+
           `> \`${prefix}ihelp:\` Gives you iPro's Server Commands`);
       },10);

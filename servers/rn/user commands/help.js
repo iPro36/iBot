@@ -7,7 +7,6 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
     setTimeout(function()
     {
       msg.channel.send(
-        `-\n`+
         `• **${msg.guild.name} Server Commands: **\n`+
         `> \`${prefix}rnhelp:\` Gives you RN's Server Commands`);
     },10);
