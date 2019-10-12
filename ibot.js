@@ -37,26 +37,7 @@ bot.on('ready', () =>
 //When bot joins a server
 bot.on('guildCreate', (guild) =>
 {
-  //Checks for bot-log
-  if (!guild.channels.find('name','ilog'))
-  {
-    guild.createChannel("ilog","text",[{
-      id: guild.id,
-      deny: ['READ_MESSAGES'],
-    }])
-    return;
-  }
-
-  //Checks for auto-log
-  if (!guild.channels.find('name','auto-log'))
-  {
-    guild.createChannel("auto-log","text",[{
-      id: guild.id,
-      deny: ['READ_MESSAGES'],
-    }])
-    return;
-  }
-
+  
 });
 
 bot.on('message', (msg) =>
