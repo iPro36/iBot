@@ -1,4 +1,4 @@
-exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel) =>
+exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel, prefix) =>
 {
   //mute memeber
   if (command == 'mute')
@@ -13,10 +13,9 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel) =>
     let muterole = msg.guild.roles.find("name", 'iMute');
     if(!muterole)
     {
-      //mute
-      let mute = require(`../admin commands/makeCommands/makemute.js/index.js`);
-      mute.run(bot, msg, args, command, Discord, ms, moment);
-
+      //Mute
+      let mute = require(`../admin commands/makeCommands/mute.js`);
+      mute.run(bot, msg, args, command, Discord, ms, moment, prefix);
       return msg.channel.send('It seems like there was no mute role in this server, no worries I took care of that. Please tray once again...');
     }
 

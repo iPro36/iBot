@@ -1,4 +1,4 @@
-exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel) =>
+exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel, prefix) =>
 {
       //CLear messages
   if (command == 'clear')

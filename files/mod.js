@@ -44,21 +44,21 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
 
   //Kick
   let kick = require(`../mod commands/kick.js`);
-  kick.run(bot, msg, args, command, Discord, ms, moment, logChannel);
+  kick.run(bot, msg, args, command, Discord, ms, moment, logChannel, prefix);
 
   //Ban
   let ban = require(`../mod commands/ban.js`);
-  ban.run(bot, msg, args, command, Discord, ms, moment, logChannel);
+  ban.run(bot, msg, args, command, Discord, ms, moment, logChannel, prefix);
 
   //Mute
   let mute = require(`../mod commands/mute.js`);
-  mute.run(bot, msg, args, command, Discord, ms, moment, logChannel);
+  mute.run(bot, msg, args, command, Discord, ms, moment, logChannel, prefix);
 
   //Warn
   let warn = require(`../mod commands/warn.js`);
-  warn.run(bot, msg, args, command, Discord, ms, moment, logChannel, fs);
+  warn.run(bot, msg, args, command, Discord, ms, moment, logChannel, fs, prefix);
 
   //Clear
   let clear = require(`../mod commands/clear.js`);
-  clear.run(bot, msg, args, command, Discord, ms, moment, logChannel);
+  clear.run(bot, msg, args, command, Discord, ms, moment, logChannel, prefix);
 }

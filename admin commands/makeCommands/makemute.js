@@ -8,24 +8,9 @@ module.exports.run = async (bot, msg, args, command, Discord, ms, moment) =>
     } 
     else 
     {
-      try{
-        muterole = await msg.guild.createRole
-        ({
-          name: "iMute",
-          color: "#000000",
-          permissions:[]
-        })
-        msg.guild.channels.forEach(async (channel, id) => 
-        {
-          await channel.overwritePermissions(muterole, 
-            {
-            SEND_MESSAGES: false,
-            ADD_REACTIONS: false
-          });
-        });
-      }catch(e){
-        console.log(e.stack);
-      }
+      //Mute
+      let mute = require(`./mute.js`);
+      mute.run(bot, msg, args, command, Discord, ms, moment, prefix);
       return msg.channel.send("**iMute** role has been created!")
     }
   }

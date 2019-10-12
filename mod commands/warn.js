@@ -1,4 +1,4 @@
-exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel, fs) =>
+exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel, fs, prefix) =>
 {
   let warns = JSON.parse(fs.readFileSync("./data/warnings.json", "utf8"));
 
