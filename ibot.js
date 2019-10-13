@@ -15,7 +15,7 @@ bot.on('message', (msg) =>
   const command = args.shift().toLowerCase();
   if (msg.content=='test' && msg.author.id == "260857663577915392")
   {
-    
+    msg.channel.send("Noting to test :(");
   }
 
 /**********************************************************/
