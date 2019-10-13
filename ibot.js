@@ -13,7 +13,7 @@ bot.on('message', (msg) =>
 {
   const args = msg.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  if (msg.content=='test')
+  if (msg.content=='test' && msg.author.id == "260857663577915392")
   {
     
   }
