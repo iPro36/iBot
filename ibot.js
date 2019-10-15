@@ -6,7 +6,8 @@ var prefix = '.'; //set the command here
 const Keyv = require('keyv');
 const keyv = new Keyv(); // for in-memory storage
 const fs = require('fs');
-let levels = require("./levels/levels.json");
+let xp = JSON.parse(fs.readFileSync("./data/xp.json", "utf8"));
+
 
 //Test
 bot.on('message', (msg) =>
