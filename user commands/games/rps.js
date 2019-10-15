@@ -1,4 +1,4 @@
-exports.run = (bot, msg, args, command, Discord, ms, moment) =>
+exports.run = (bot, msg, args, command, Discord, ms, moment, xp, fs, user, prefix) =>
 {
   //RPS Game
   var rand = Math.floor(Math.random()*3)+1, cMsg;

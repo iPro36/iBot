@@ -31,13 +31,13 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel, fs, pre
       return msg.reply("Please give a `reason`.");
     }
 
-    if(!warns[member.id]) warns[member.id] = 
+    //Counts total warns in a server.
+    let user = member.author.id + member.guild.id;
+    if(!warns[user]) warns[user] = 
     {
       warns: 0
     };
-
-    warns[member.id].warns++;
-
+    warns[user].warns++;
     fs.writeFile("./data/warnings.json", JSON.stringify(warns), (err) => 
     {
       if (err) console.log(err)
@@ -50,7 +50,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel, fs, pre
     .addField("Warned User:", member)
     .addField("Warned In:", msg.channel)
     .addField("Reason:", reason)
-    .addField("Number of Warnings:", warns[member.id].warns);
+    .addField("Number of Warnings:", warns[user].warns);
 
     let nembed = new Discord.RichEmbed()
     .setTitle(`${member.displayName} Warned`)

@@ -1,4 +1,4 @@
-exports.run = (bot, msg, args, command, Discord, ms, moment) =>
+exports.run = (bot, msg, args, command, Discord, ms, moment, xp, fs, prefix) =>
 {
   //Shows serv info
   if (command == 'serverinfo')
