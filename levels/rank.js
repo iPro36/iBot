@@ -17,7 +17,14 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, levels, fs) =>
     let levelup = currentlevl * 200;
 
     //Adds user's xp, everytime they send a message
+    const NoXP4U = new Set();
+    if(!NoXP4U.has(msg.author.id)) {
     currentxp = currentxp + xpadd;
+    NoXP4U.add(msg.author.id)
+        setTimeout(() => {
+        NoXP4U.delete(msg.author.id)
+        }, 60 * 1000)
+    } 
     if (currentxp >= levelup)
     {
         currentlevl++;
