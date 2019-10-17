@@ -3,7 +3,7 @@ exports.run = (bot, Discord, ms, moment) =>
 //Member Banned
 bot.on('guildBanAdd', (server,member) =>
 {
-  let autolog = member.guild.channels.find('name','auto-log');
+  let autolog = member.guild.channels.find(ch => ch.name === 'auto-log');
   if (!autolog)
   {
     return;
@@ -22,7 +22,7 @@ bot.on('guildBanAdd', (server,member) =>
 //Member Un-Banned
 bot.on('guildBanRemove', (server,member) =>
 {
-  let autolog = member.guild.channels.find('name','auto-log');
+  let autolog = member.guild.channels.find(ch => ch.name === 'auto-log');
   if (!autolog)
   {
     return;

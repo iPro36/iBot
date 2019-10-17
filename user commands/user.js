@@ -1,4 +1,4 @@
-exports.run = (bot, msg, args, command, Discord, ms, moment, xp, fs, prefix) =>
+exports.run = (bot, msg, args, command, Discord, ms, moment, xp, fs, prefix, Canvas) =>
 {
   //Help Command
   if (command == 'help')
@@ -35,6 +35,6 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, xp, fs, prefix) =>
 
     //Rank Info
     let rankinfofiles = require(`./rank info/rankinfofiles`);
-    rankinfofiles.run(bot, msg, args, command, Discord, ms, moment, xp, fs, prefix);
+    rankinfofiles.run(bot, msg, args, command, Discord, ms, moment, xp, fs, prefix, Canvas);
     
 }

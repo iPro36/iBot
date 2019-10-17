@@ -7,7 +7,7 @@ bot.on('messageUpdate',(oldMsg,newMsg) =>
   {
     return;
   }
-  let autolog = oldMsg.guild.channels.find('name','auto-log');
+  let autolog = oldMsg.guild.channels.find(ch => ch.name === 'auto-log');
   if (!autolog)
   {
     return;
@@ -17,7 +17,7 @@ bot.on('messageUpdate',(oldMsg,newMsg) =>
   let embed = new Discord.RichEmbed()
   .setAuthor(oldMsg.author.username,oldMsg.author.avatarURL)
   .setTitle("Message **Edited!**")
-  .setDescription(`Message Edited in: ${oldMsg.guild.channels.find('id',oldMsg.channel.id)}`)
+  .setDescription(`Message Edited in: ${oldMsg.guild.channels.find(ch => ch.id === oldMsg.channel.id)}`)
   .addField("Old Message:", oldMsg)
   .addField("New Message:", newMsg)
   .setColor("#42eef4")
@@ -29,7 +29,7 @@ bot.on('messageUpdate',(oldMsg,newMsg) =>
 //Message deleted
 bot.on('messageDelete', (msg) =>
 {
-  let autolog = msg.guild.channels.find('name','auto-log');
+  let autolog = msg.guild.channels.find(ch => ch.name === 'auto-log');
   if (!autolog)
   {
     return;
@@ -42,7 +42,7 @@ bot.on('messageDelete', (msg) =>
   let embed = new Discord.RichEmbed()
   .setAuthor(msg.author.username,msg.author.avatarURL)
   .setTitle("Message __**Deleted!**__")
-  .setDescription(`Message deleted in: ${msg.guild.channels.find('id',msg.channel.id)}`)
+  .setDescription(`Message deleted in: ${msg.guild.channels.find(ch => ch.id === msg.channel.id)}`)
   .addField("Deleted Message:", `${msg.content}`)
   .setColor("#ed5264")
   .setTimestamp();

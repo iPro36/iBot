@@ -3,7 +3,7 @@ exports.run = (bot, Discord, ms, moment) =>
 //Member Leaves
 bot.on('guildMemberRemove', member =>
 {
-    let autolog = member.guild.channels.find('name','auto-log');
+    let autolog = member.guild.channels.find(ch => ch.name === 'auto-log');
     if (!autolog)
     {
       return;
@@ -19,10 +19,10 @@ bot.on('guildMemberRemove', member =>
 
     if (member.guild.id == '272954876021964800')
     {
-      let welcome = member.guild.channels.find('id','436330640217210881');
+      let welcome = member.guild.channels.find(ch => ch.id === '436330640217210881');
 
-      let ch = bot.guilds.find('id', '272954876021964800').channels.find('id','392901042003771404');
-      ch.setName(`Server Members: ${ch.guild.memberCount}`)
+      // let ch = bot.guilds.find('id', '272954876021964800').channels.find(ch => ch.id === '392901042003771404');
+      // ch.setName(`Server Members: ${ch.guild.memberCount}`)
   
       let embed = new Discord.RichEmbed()
       .setAuthor(member.user.username,member.user.avatarURL)
@@ -42,7 +42,7 @@ bot.on('guildMemberAdd', (member) =>
     return;
   }
 
-  let autolog = member.guild.channels.find('name','auto-log');
+  let autolog = member.guild.channels.find(ch => ch.name === 'auto-log');
   if (!autolog)
   {
     return;

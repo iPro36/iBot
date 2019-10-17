@@ -1,6 +1,6 @@
 exports.run = (bot, msg, args, command, Discord, ms, moment) =>
 {
-    let warrior = msg.guild.roles.find('name', 'Civil Warrior');
+    let warrior = msg.guild.roles.find(roles => roles.name === 'Civil Warrior');
 
     //Lets the user assign them selves the warrior role
     if (command == 'join')
@@ -80,7 +80,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment) =>
         }
     
         count = 0;
-        msg.guild.roles.find('name', 'Civil Warrior').members.forEach(function(member,id)
+        msg.guild.roles.find(roles => roles.name === 'Civil Warrior').members.forEach(function(member,id)
         {
             if (!member.user.bot || !member.user.id == bot.id)
             { 

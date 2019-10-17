@@ -1,6 +1,6 @@
 exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
 {
-    let codPLayer = msg.guild.roles.find('name', 'COD Mobile Player');
+    let codPLayer = msg.guild.roles.find(roles => roles.name === 'COD Mobile Player');
     let usernameChannel = msg.guild.channels.get('632241734855819275');
     let codTalkChannel = msg.guild.channels.get('632241762068594689');
 

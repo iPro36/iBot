@@ -1,6 +1,6 @@
 exports.run = (bot, msg, args, command, Discord, ms, moment, logChannel, fs, prefix) =>
 {
-  let warns = JSON.parse(fs.readFileSync("./data/warnings.json", "utf8"));
+  let warns = JSON.parse(fs.readFileSync("./data/warnings/warnings.json", "utf8"));
 
   if (command == 'warn')
   {

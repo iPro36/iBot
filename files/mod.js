@@ -3,7 +3,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
   const fs = require("fs");
 
   //Checks for bot-log
-  if (!msg.guild.channels.find('name','ilog'))
+  if (!msg.guild.channels.find(ch => ch.name === 'ilog'))
   {
     msg.guild.createChannel("ilog","text",[{
       id: msg.guild.id,
@@ -13,7 +13,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
     "`Its only availabel to admins. Make sure you change perms according to your needs.`");
   }
 
-  let logChannel = msg.guild.channels.find('name','ilog');
+  let logChannel = msg.guild.channels.find(ch => ch.name === 'ilog');
 
   //Gives the list of mod commands
   if (command == 'modhelp')
