@@ -2,11 +2,12 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const ms = require("ms");
 const moment = require("moment");
-var prefix = '.'; //set the command here
+var prefix = ';'; //set the command here
 const Keyv = require('keyv');
 const keyv = new Keyv(); // for in-memory storage
 const fs = require('fs');
-let xp = JSON.parse(fs.readFileSync("./data/xp.json", "utf8"));
+const Canvas = require('canvas');
+let xp = JSON.parse(fs.readFileSync("./data/levels/xp.json", "utf8"));
 
 
 //Test
@@ -14,7 +15,7 @@ bot.on('message', (msg) =>
 {
   const args = msg.content.slice(prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
-  if (msg.author.id == '260857663577915392')
+  if (msg.author.id == '260857663577915392' && msg.content == 'test')
   {
 
   }
@@ -31,8 +32,18 @@ bot.on('ready', () =>
 //When bot joins a server
 bot.on('guildCreate', (guild) =>
 {
-  
+  if(!fs.existsSync(`./data/levels/${msg.guild.id}.json`))
+  {
+    fs.writeFile(`./data/levels/${msg.guild.id}.json`, JSON.stringify(xp), (err) =>
+    {
+      if (err) console.log(err);
+    });
+    //Xp is set to a json file, for the sserver, for levels.
+    xp = JSON.parse(fs.readFileSync(`./data/levels/${msg.guild.id}.json`, "utf8"));
+  }
 });
+
+
 
 //Commands
 bot.on('message', (msg) =>
@@ -55,7 +66,7 @@ bot.on('message', (msg) =>
 
   //User
   let usercommands = require(`./user commands/user.js`);
-  usercommands.run(bot, msg, args, command, Discord, ms, moment, xp, fs, prefix);
+  usercommands.run(bot, msg, args, command, Discord, ms, moment, xp, fs, prefix, Canvas);
 }).listenerCount("20");
 
 //Other
@@ -73,7 +84,7 @@ bot.on('message', (msg) =>
 
   //Levels
   let levels = require(`./levels/levelfiles.js`);
-  levels.run(bot, msg, args, command, Discord, ms, moment, xp, fs, prefix);
+  levels.run(bot, msg, args, command, Discord, ms, moment, xp, fs, prefix, Canvas);
 
 });
 
@@ -89,3 +100,4 @@ automod.run(bot, Discord, ms, moment);
 
 /*************************************************************************************************************************************/
 bot.login(process.env.BOT_TOKEN);
+
