@@ -17,7 +17,7 @@ bot.on('message', (msg) =>
   const command = args.shift().toLowerCase();
   if (msg.author.id == '260857663577915392' && msg.content == 'test')
   {
-
+    msg.channel.send("I work");
   }
 });
 
