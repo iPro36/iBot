@@ -25,7 +25,11 @@ bot.on('message', (msg) =>
 bot.on('ready', () =>
 {
   console.log(`Logged in as ${bot.user.tag}!`);
-  bot.user.setActivity(`${prefix}help`, 'PLAYING');
+  bot.user.setActivity(`Loading...`, 'PLAYING');
+  setTimeout(function()
+  { 
+    bot.user.setActivity(`${prefix}help`, 'PLAYING');
+  }, ms('10s'));
 });
 
 /*************************************************************************************/
