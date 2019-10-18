@@ -19,7 +19,7 @@ exports.run = async (bot, msg, args, command, Discord, ms, moment, xp, fs, prefi
         {
             const canvas = Canvas.createCanvas(934, 282);
             const ctx = canvas.getContext('2d');
-            const background = await Canvas.loadImage('./rank.jpg');
+            const background = await Canvas.loadImage('./images/rank.jpg');
         
             //Sets measurements of the image loaded
             ctx.drawImage(background, 0, 0, canvas.width, canvas.height); 
