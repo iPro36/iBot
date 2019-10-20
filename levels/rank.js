@@ -33,7 +33,7 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, xp, fs, prefix, Can
     if (levelupLimit <= xp[user].xp)
     {
         xp[user].level = currentlevl + 1;
-        msg.channel.send(`• __**Level Up**__:\n> Current Level: ${currentlevl}`);
+        //msg.channel.send(`• __**Level Up**__:\n> Current Level: ${currentlevl}`);
         xp[user].xp = 0;
     }
 }
