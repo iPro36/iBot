@@ -32,10 +32,6 @@ exports.run = (bot, msg, args, command, Discord, ms, moment, prefix) =>
       `> \`${prefix}leave\` To get out of RN's Civil War\n`+
       `> \`${prefix}count\` To see the ammount of Civil Warriors\n\n`+*/
 
-      `• **COD Mobile Commands: **\n`+
-      `> \`${prefix}codjoin\` To join the world of COD Mobile\n`+
-      `> \`${prefix}codleave\` To leave\n\n`+
-
       `• **Other Commands: **\n`+
       `> \`${prefix}rnhelp:\` This list`);
   }
