@@ -9,7 +9,6 @@ To invite the bot click [here](https://discordapp.com/oauth2/authorize?client_id
 ### Usage
 
 Use the follwing commands to get the list of commands you desire.
-
 ```
 .help- lists general command that can be used by anyone
 .modhelp- lists commands that can only be accessed by moderators
